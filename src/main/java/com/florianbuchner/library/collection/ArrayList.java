@@ -47,4 +47,19 @@ public class ArrayList<T> implements List<T> {
 		this.size++;		
 	}
 
+	@Override
+	public T remove(int index) {
+		final T item = this.get(index);
+		for (int i = index; i < size - 1; i++) {
+			this.array[i] = this.array[i+1];
+		}
+		this.size--;
+		return item;
+	}
+
+	@Override
+	public void clear() {
+		this.size = 0;
+	}
+
 }

@@ -6,5 +6,9 @@ public interface List<T> {
 	
 	T get(int index);
 	
+	T remove(int index);
+	
 	void add(T item);
+	
+	void clear();
 }

@@ -1,4 +1,4 @@
-package com.florianbuchner.library.collection;
+package com.florianbuchner.library.collection.list;
 
 public interface List<T> {
 
@@ -7,6 +7,8 @@ public interface List<T> {
 	T get(int index);
 	
 	T remove(int index);
+	
+	void replace(int index, T value);
 	
 	void add(T item);
 	

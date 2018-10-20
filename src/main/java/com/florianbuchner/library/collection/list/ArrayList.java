@@ -1,4 +1,4 @@
-package com.florianbuchner.library.collection;
+package com.florianbuchner.library.collection.list;
 
 import java.lang.reflect.Array;
 
@@ -10,8 +10,11 @@ public class ArrayList<T> implements List<T> {
 	
 	private T[] array;
 	
+	private Class<T> type;
+	
 	@SuppressWarnings("unchecked")
 	public ArrayList(Class<T> type) {
+		this.type = type;
 		this.array = (T[]) Array.newInstance(type, INCREMENT);
 	}
 	
@@ -38,7 +41,7 @@ public class ArrayList<T> implements List<T> {
 	public void add(T item) {
 		if (this.size >= this.array.length) {
 			final T[] current = this.array;
-			this.array = (T[]) Array.newInstance(item.getClass(), current.length + INCREMENT);
+			this.array = (T[]) Array.newInstance(this.type, current.length + INCREMENT);
 			for (int i = 0; i < current.length; i++) {
 				this.array[i] = current[i];
 			}
@@ -53,6 +56,7 @@ public class ArrayList<T> implements List<T> {
 		for (int i = index; i < size - 1; i++) {
 			this.array[i] = this.array[i+1];
 		}
+		this.array[this.size -1] = null;
 		this.size--;
 		return item;
 	}
@@ -60,6 +64,11 @@ public class ArrayList<T> implements List<T> {
 	@Override
 	public void clear() {
 		this.size = 0;
+	}
+
+	@Override
+	public void replace(int index, T value) {
+		this.array[index] = value;
 	}
 
 }

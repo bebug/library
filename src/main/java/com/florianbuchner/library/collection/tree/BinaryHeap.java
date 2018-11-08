@@ -49,7 +49,7 @@ public class BinaryHeap<T extends Comparable<T>> {
 	}
 	
 	private void bubbleUp(int index) {
-		while(!this.valideHeapAtIndex(index) && index > 0) {
+		while(!this.validHeapAtIndex(index) && index > 0) {
 			final int previousIndex = this.previousIndex(index);
 			this.swapValue(index, previousIndex);
 			index = previousIndex;
@@ -59,7 +59,7 @@ public class BinaryHeap<T extends Comparable<T>> {
 	private void bubbleDown(int index) {
 		int nextLeftIndex = this.nextLeftIndex(index);
 		
-		while(!this.valideHeapAtIndex(index) && nextLeftIndex <= this.values.size() - 1) {
+		while(!this.validHeapAtIndex(index) && nextLeftIndex <= this.values.size() - 1) {
 			final int nextRightIndex = this.nextRightIndex(index);
 
 			final int nextChoosenIndex;
@@ -81,7 +81,7 @@ public class BinaryHeap<T extends Comparable<T>> {
 		}
 	}
 	
-	private boolean valideHeapAtIndex(int index) {
+	private boolean validHeapAtIndex(int index) {
 		final T value = this.values.get(index);
 		final int previousIndex = this.previousIndex(index);
 		final int nextLeftIndex = this.nextLeftIndex(index);

@@ -16,17 +16,11 @@ public class Shellsort {
 		}
 	}
 	
-//	private static <T extends Comparable<T>>void sort(T[] source, int start, int distance) {
-//		for (int i = start + distance; i < source.length; i+=distance) {
-//			
-//		}
-//	}
-	
 	private static int[] getSequence(int size) {
 		int[] result = new int[Double.valueOf((Math.log(size/5) / Math.log(2L))).intValue() + 1];
 		result[result.length - 1] = 1;
 		for (int i = result.length - 2; i >= 0; i--) {
-			result[i] = result[i+1] * 2;
+			result[i] = (result[i+1] + 1)  * 2 - 1;
 		}
 		
 		return result;

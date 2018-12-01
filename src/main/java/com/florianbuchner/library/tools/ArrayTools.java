@@ -1,5 +1,7 @@
 package com.florianbuchner.library.tools;
 
+import java.lang.reflect.Array;
+
 public class ArrayTools {
 
 	public static <T extends Comparable<T>> int binarySearch(T[] array, T item) {
@@ -23,4 +25,10 @@ public class ArrayTools {
 		return -1;
 	}
 	
+	@SuppressWarnings("unchecked")
+	public static <T extends Comparable<T>> T[] copy(T[] array, int start, int end) {
+		T[] newArray = (T[]) Array.newInstance(array[0].getClass(), end-start + 1);
+		System.arraycopy(array, start, newArray, 0, newArray.length);
+		return newArray;
+	}
 }

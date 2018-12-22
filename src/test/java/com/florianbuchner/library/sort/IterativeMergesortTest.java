@@ -4,7 +4,8 @@ import static org.junit.Assert.assertEquals;
 
 import org.junit.Test;
 
-public class MergeSortTest {
+public class IterativeMergesortTest {
+	
 	@Test
 	public void testSort() {
 		final Integer[] values = {Integer.valueOf(5),
@@ -16,7 +17,7 @@ public class MergeSortTest {
 				Integer.valueOf(7),
 				Integer.valueOf(2),
 				Integer.valueOf(0)};
-		final Integer[] result = MergeSort.sort(values);
+		final Integer[] result = IterativeMergeSort.sort(values);
 		
 		assertEquals(Integer.valueOf(0), result[0]);
 		assertEquals(Integer.valueOf(1), result[1]);
@@ -27,6 +28,6 @@ public class MergeSortTest {
 		assertEquals(Integer.valueOf(7), result[6]);
 		assertEquals(Integer.valueOf(8), result[7]);
 		assertEquals(Integer.valueOf(9), result[8]);
-
+		
 	}
 }

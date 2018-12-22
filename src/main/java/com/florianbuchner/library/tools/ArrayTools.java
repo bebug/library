@@ -31,4 +31,10 @@ public class ArrayTools {
 		System.arraycopy(array, start, newArray, 0, newArray.length);
 		return newArray;
 	}
+	
+	public static <T>void swap(T[] source, int pos1, int pos2) {
+		final T tmp = source[pos1];
+		source[pos1] = source[pos2];
+		source[pos2] = tmp;
+	}
 }

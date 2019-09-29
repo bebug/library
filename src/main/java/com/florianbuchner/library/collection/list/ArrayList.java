@@ -8,14 +8,11 @@ public class ArrayList<T> implements List<T> {
 	
 	private int size;
 	
-	private T[] array;
-	
-	private Class<T> type;
+	private Object[] array;
 	
 	@SuppressWarnings("unchecked")
-	public ArrayList(Class<T> type) {
-		this.type = type;
-		this.array = (T[]) Array.newInstance(type, INCREMENT);
+	public ArrayList() {
+		this.array = new Object[INCREMENT];
 	}
 	
 	public ArrayList(T[] source) {
@@ -33,15 +30,15 @@ public class ArrayList<T> implements List<T> {
 		if (index >= size) {
 			throw new ArrayIndexOutOfBoundsException(index);
 		}
-		return array[index];
+		return (T) array[index];
 	}
 
 	@Override
 	@SuppressWarnings("unchecked")
 	public void add(T item) {
 		if (this.size >= this.array.length) {
-			final T[] current = this.array;
-			this.array = (T[]) Array.newInstance(this.type, current.length + INCREMENT);
+			final Object[] current = this.array;
+			this.array = new Object[current.length + INCREMENT];
 			for (int i = 0; i < current.length; i++) {
 				this.array[i] = current[i];
 			}

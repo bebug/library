@@ -9,8 +9,8 @@ public class BinaryHeap<T extends Comparable<T>> {
 	
 	private HeapType heapType;
 	
-	public BinaryHeap(Class<T> classType, HeapType heapType) {
-		this.values = new ArrayList<>(classType);
+	public BinaryHeap(HeapType heapType) {
+		this.values = new ArrayList<>();
 		this.heapType = heapType;
 	}
 	

@@ -7,7 +7,7 @@ public class ArrayListTest extends AbstractListTest {
 
 	@Override
 	public List<Integer> createArray() {
-		return new ArrayList<>(Integer.class);
+		return new ArrayList<>();
 	}
 
 }

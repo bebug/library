@@ -10,7 +10,7 @@ public class BinaryHeapTest {
 
 	@Test
 	public void testInsertRemoveMinHeap() {
-		final BinaryHeap<Integer> heap = new BinaryHeap<>(Integer.class, HeapType.MIN_HEAP);
+		final BinaryHeap<Integer> heap = new BinaryHeap<>(HeapType.MIN_HEAP);
 		
 		heap.insert(Integer.valueOf(5));
 		heap.insert(Integer.valueOf(8));
@@ -31,7 +31,7 @@ public class BinaryHeapTest {
 	
 	@Test
 	public void testInsertRemoveMaxHeap() {
-		final BinaryHeap<Integer> heap = new BinaryHeap<>(Integer.class, HeapType.MAX_HEAP);
+		final BinaryHeap<Integer> heap = new BinaryHeap<>(HeapType.MAX_HEAP);
 		
 		heap.insert(Integer.valueOf(5));
 		heap.insert(Integer.valueOf(8));
